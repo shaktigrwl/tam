@@ -49,7 +49,7 @@ class PDF(FPDF):
 
 def create_pdf(image_paths, variations, output_path):
 
-    ppdf = FPDF(format='A4')
+    pdf = FPDF(format='A4')
     pdf.add_page()
     pdf.image(image_paths[0], x=5, y=10, w=100)    # Left half
     pdf.image(image_paths[1], x=110, y=10, w=100)  # Right half
