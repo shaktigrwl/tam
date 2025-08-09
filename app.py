@@ -49,14 +49,13 @@ class PDF(FPDF):
 
 def create_pdf(image_paths, variations, output_path):
 
-    pdf = FPDF()
-    # --- Page 1: A4 portrait ---
-    pdf.add_page(format='A4')
+    ppdf = FPDF(format='A4')
+    pdf.add_page()
     pdf.image(image_paths[0], x=5, y=10, w=100)    # Left half
     pdf.image(image_paths[1], x=110, y=10, w=100)  # Right half
 
     # --- Page 2: A3 portrait ---
-    pdf.add_page(format='A4')
+    pdf.add_page()
     pdf.image(image_paths[2], x=5, y=10, w=100)   # Left side image
 
     # Move to right side for variations text
