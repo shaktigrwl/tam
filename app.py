@@ -33,13 +33,13 @@ def save_images_temp(sets):
     return paths
 
 def create_pdf(image_paths, variations, output_path):
-    pdf = FPDF(unit='mm')
+    pdf = FPDF(unit='mm', format='A4')
+    pdf.add_page()
     # Page 1: A4
-    pdf.add_page(format=(210, 297)) # A4
     pdf.image(image_paths[0], x=5, y=10, w=100)
     pdf.image(image_paths[1], x=110, y=10, w=100)
     # Page 2: A3
-    pdf.add_page(format=(297, 420)) # A3
+    pdf.add_page()    
     pdf.image(image_paths[2], x=10, y=10, w=130)
     pdf.set_xy(150, 20)
     pdf.set_font('Arial', '', 12)
