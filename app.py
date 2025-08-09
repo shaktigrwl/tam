@@ -48,8 +48,8 @@ class PDF(FPDF):
     pass
 
 def create_pdf(image_paths, variations, output_path):
-    pdf = PDF(unit='mm')
 
+    pdf = FPDF()
     # --- Page 1: A4 portrait ---
     pdf.add_page(format='A4')
     pdf.image(image_paths[0], x=5, y=10, w=100)    # Left half
