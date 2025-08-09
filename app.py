@@ -44,7 +44,8 @@ def create_pdf(image_paths, variations, output_path):
     pdf.set_xy(150, 20)
     pdf.set_font('Arial', '', 12)
     for var in variations:
-        pdf.cell(0, 8, var.encode('latin-1', 'ignore').decode('latin-1'), ln=1)
+        safe_line = var.encode('latin-1', 'ignore').decode('latin-1')
+        pdf.multi_cell(0, 8, safe_line)
     pdf.output(output_path)
     return output_path
 
